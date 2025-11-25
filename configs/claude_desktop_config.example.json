@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://your-n8n-instance.com/webhook/mcp/sse"],
+      "env": {}
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_API_KEY": "secret_YOUR_NOTION_TOKEN"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_YOUR_GITHUB_TOKEN"
+      }
+    },
+    "discord": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-discord"],
+      "env": {
+        "DISCORD_BOT_TOKEN": "YOUR_DISCORD_BOT_TOKEN"
+      }
+    },
+    "airtable": {
+      "command": "npx",
+      "args": ["-y", "mcp-server-airtable", "--baseId", "appYOUR_BASE_ID"],
+      "env": {
+        "AIRTABLE_API_KEY": "patYOUR_AIRTABLE_TOKEN"
+      }
+    },
+    "openai": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-server-openai"],
+      "env": {
+        "OPENAI_API_KEY": "sk-YOUR_OPENAI_KEY"
+      }
+    }
+  }
+}
