@@ -1,0 +1,55 @@
+{
+  "name": "MCP Hello PNX - Wolf Lab Demo",
+  "nodes": [
+    {
+      "parameters": {
+        "toolName": "hello_pnx",
+        "toolDescription": "Dit bonjour depuis n8n - Demo Wolf Lab MCP",
+        "inputSchema": "{}"
+      },
+      "id": "mcp-trigger",
+      "name": "MCP Server Trigger",
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "message",
+              "value": "Hello Wolf Lab depuis n8n ! MCP fonctionne parfaitement."
+            }
+          ]
+        }
+      },
+      "id": "set-response",
+      "name": "Set Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [470, 300]
+    }
+  ],
+  "connections": {
+    "MCP Server Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateId": "wolphlab-mcp-hello"
+  },
+  "tags": ["MCP", "Wolf Lab", "Demo"]
+}
